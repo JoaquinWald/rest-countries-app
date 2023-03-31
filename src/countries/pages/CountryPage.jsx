@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import CountryByName from '../helpers/CountryByName';
+import CountryByName from '../components/CountryByName';
 
 
 export const CountryPage = () => {

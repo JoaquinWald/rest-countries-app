@@ -70,12 +70,6 @@ export const FilterCountries = () => {
           <DropdownItem onClick={filterOceania}>Oceania</DropdownItem>
         </DropdownMenu>
 
-        {/* <div>
-          <h3>
-            Elegiste: {categories}
-          </h3>
-        </div> */}
-
       </Dropdown>
 
     </div>

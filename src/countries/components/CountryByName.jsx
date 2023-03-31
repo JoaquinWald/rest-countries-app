@@ -1,11 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { CountryBorders } from "./CountryBorders";
 
 
 const CountryByName = ({ altSpellings }) => {
   const { data } = useFetch('https://restcountries.com/v3.1/all');
   const country = data?.find(data => data.altSpellings[0] === altSpellings);
+
 
   const navigate = useNavigate();
   const onNavigateBack = () => {
@@ -68,7 +70,12 @@ const CountryByName = ({ altSpellings }) => {
             </p>
             <br />
 
-            <h5>Border Countries:</h5>
+            {/* <h5>Border Countries:</h5> */}
+            <div>
+
+              <CountryBorders borders={country.borders} altSpellings={altSpellings} />
+
+            </div>
           </div>
 
         </div>

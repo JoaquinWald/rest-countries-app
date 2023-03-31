@@ -8,11 +8,11 @@ export const CountriesCard = ({ altSpellings, flags, name, capital, population, 
       className="mb-10 bg-white rounded-xl"
     >
 
-      <figure className="w-full rounded-xl mt-4 border border-black">
-        <img className="rounded-t-lg h-56 w-full" src={flags.png} alt={flags.alt} />
+      <figure className="flex justify-center w-full rounded-xl mt-4">
+        <img className="rounded-t-lg h-44 w-auto border" src={flags.png} alt={flags.alt} />
       </figure>
 
-      <div className="px-4 pb-4">
+      <div className="px-4 pb-4 sm:text-center">
 
         <h2>
           {name.common}

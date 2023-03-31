@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
 
-    <header className="bg-white-500 p-4">
+    <header className="bg-white-500 p-4 shadow">
 
       <nav className="flex justify-between">
         <div>
