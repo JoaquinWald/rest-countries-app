@@ -10,12 +10,10 @@ export const AppRouter = () => {
       <Header />
 
       <Routes>
-        <Route path="/*" element={<CountriesRoutes />} />
-      </Routes>
-
-      <Routes>
 
         <Route path="country/:cca3" element={<CountryPage />} />
+
+        <Route path="/*" element={<CountriesRoutes />} />
 
       </Routes>
 
