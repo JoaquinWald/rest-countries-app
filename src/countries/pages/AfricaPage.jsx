@@ -5,12 +5,8 @@ export const AfricaPage = () => {
 
   const { data, isLoading } = useFetch('https://restcountries.com/v3.1/region/Africa');
 
-  // const { name, population, region, capital } = !!data;
-
-
   return (
     <div>
-      <hr />
 
       {
         (isLoading)
@@ -20,7 +16,7 @@ export const AfricaPage = () => {
             </div>
           )
           : (
-            <div className="flex justify-center">
+            <div className="">
               <CountriesList data={data} />
             </div>
           )

@@ -4,11 +4,11 @@ import CountryByName from '../components/CountryByName';
 
 export const CountryPage = () => {
 
-  const { altSpellings } = useParams();
+  const { cca3 } = useParams();
 
   return (
-    <>
-      <CountryByName altSpellings={altSpellings} />
-    </>
+    <div className=''>
+      <CountryByName cca3={cca3} />
+    </div>
   )
 }

@@ -7,7 +7,6 @@ export const AllPage = () => {
 
   return (
     <div className="">
-      <hr />
 
       {
         (isLoading)
@@ -17,7 +16,7 @@ export const AllPage = () => {
             </div>
           )
           : (
-            <div className="flex justify-center">
+            <div className="">
               <CountriesList data={data} />
             </div>
           )

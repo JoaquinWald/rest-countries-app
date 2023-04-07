@@ -11,9 +11,6 @@ export const AppRouter = () => {
 
       <Routes>
 
-        {/* <Route path="country" element={<CountryPage />} /> */}
-        <Route path="country/:altSpellings" element={<CountryPage />} />
-
         <Route path="country/:cca3" element={<CountryPage />} />
 
         <Route path="/*" element={<CountriesRoutes />} />

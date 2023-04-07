@@ -13,7 +13,7 @@ export const FilterCountries = () => {
   }
 
   const [categories, setCategories] = useState('');
-  const [byRegion, setByRegion] = useState(false)
+  const [byRegion, setByRegion] = useState(false);
 
   const filterAll = () => {
     navigate('/all')
@@ -49,10 +49,10 @@ export const FilterCountries = () => {
   const filterByRegion = 'Filter by Region...';
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pt-4 mt-0.5">
 
-      <Dropdown isOpen={dropdown} toggle={openAndCloseDropdown} className="pt-2">
-        <DropdownToggle caret className="px-5">
+      <Dropdown isOpen={dropdown} toggle={openAndCloseDropdown} className="shadow rounded-md">
+        <DropdownToggle caret className="px-5 py-2 shadow-sm text-muted square border-0 bg-light dark:bg-secondary">
           {
             (byRegion)
               ? categories
@@ -60,7 +60,7 @@ export const FilterCountries = () => {
           }
         </DropdownToggle>
 
-        <DropdownMenu>
+        <DropdownMenu className="">
           <DropdownItem disabled>{filterByRegion}</DropdownItem>
           <DropdownItem onClick={filterAll}>All</DropdownItem>
           <DropdownItem onClick={filterAfrica}>Africa</DropdownItem>

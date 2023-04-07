@@ -8,7 +8,6 @@ export const OceaniaPage = () => {
 
   return (
     <div>
-      <hr />
 
       {
         (isLoading)
@@ -18,7 +17,7 @@ export const OceaniaPage = () => {
             </div>
           )
           : (
-            <div className="flex justify-center">
+            <div className="">
               <CountriesList data={data} />
             </div>
           )

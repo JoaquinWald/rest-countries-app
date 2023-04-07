@@ -1,12 +1,12 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { CountryBorders } from "./CountryBorders";
 
 
-const CountryByName = ({ altSpellings }) => {
+const CountryByName = ({ cca3 }) => {
   const { data } = useFetch('https://restcountries.com/v3.1/all');
-  const country = data?.find(data => data.altSpellings[0] === altSpellings);
+  const country = data?.find(data => data.cca3 === cca3);
 
 
   const navigate = useNavigate();
@@ -16,12 +16,12 @@ const CountryByName = ({ altSpellings }) => {
 
 
   return (
-    <div className="grid grid-cols-1 p-4 bg-zinc-50">
+    <div className="grid grid-cols-1 p-4 h-screen bg-zinc-100 dark:bg-slate-800">
       {country ? (
-        <div className="">
+        <div className="lg:grid lg:grid-cols-1 lg:mb-52 place-content-start">
 
           <button
-            className="flex items-center px-4 mb-5 border border-gray-900 rounded-sm shadow-md"
+            className="flex items-center px-4 py-1 mb-5 rounded-sm shadow-md border-slate-200 bg-slate-100 lg:w-28 lg:h-10 dark:border-slate-800 dark:bg-slate-700 dark:text-slate-200"
             onClick={onNavigateBack}
           >
             <figure className="m-0 pr-1">
@@ -32,51 +32,69 @@ const CountryByName = ({ altSpellings }) => {
             </p>
           </button>
 
-          <figure>
-            <img
-              className="h-56 w-full"
-              src={country.flags.svg}
-              alt=""
-            />
-          </figure>
+          <section className="md:flex md:justify-around lg:flex dark:text-slate-100">
 
-          <div>
-            <h2>{country.name.common}</h2>
-            <p className="mb-2">
-              <b>Native Name:</b> {country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}
-            </p>
-            <p className="mb-2">
-              <b>Population:</b> {country.population.toLocaleString()}
-            </p>
-            <p className="mb-2">
-              <b> Region:</b> {country.region}
-            </p>
-            <p className="mb-2">
-              <b> Sub Region:</b> {country.subregion}
-            </p>
-            <p className="mb-2">
-              <b> Capital:</b> {country.capital}
-            </p>
-            <br />
+            <figure className="mb-6 animate__animated animate__fadeInLeft animate__fast">
+              <img
+                className="h-48 w-auto"
+                src={country.flags.png}
+                alt=""
+              />
+            </figure>
 
-            <p className="mb-2">
-              <b> Top Level Domain:</b> {country.tld}
-            </p>
-            <p className="mb-2">
-              <b> Currencies:</b> {country.currencies[Object.keys(country.currencies)[0]].name}
-            </p>
-            <p className="mb-2">
-              <b> Languages:</b> {Object.values(country.languages).join(", ")}
-            </p>
-            <br />
+            <div className="animate__animated animate__fadeInUp">
 
-            {/* <h5>Border Countries:</h5> */}
-            <div>
+              <div className="lg:flex">
 
-              <CountryBorders borders={country.borders} altSpellings={altSpellings} />
+                <article className="md:w-56 lg:ml-16 ">
 
+                  <h2>{country.name.common}</h2>
+                  <p className="mb-2">
+                    <b>Native Name:</b> {country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}
+                  </p>
+                  <p className="mb-2">
+                    <b>Population:</b> {country.population.toLocaleString()}
+                  </p>
+                  <p className="mb-2">
+                    <b> Region:</b> {country.region}
+                  </p>
+                  <p className="mb-2">
+                    <b> Sub Region:</b> {country.subregion}
+                  </p>
+                  <p className="mb-2">
+                    <b> Capital:</b> {country.capital}
+                  </p>
+
+                </article>
+
+                <br />
+
+                <article className="md:w-56 lg:ml-16 lg:pt-[46px] xl:ml-32 xl:pt-[46px]">
+
+                  <p className="mb-2">
+                    <b> Top Level Domain:</b> {country.tld}
+                  </p>
+                  <p className="mb-2">
+                    <b> Currencies:</b> {country.currencies[Object.keys(country.currencies)[0]].name}
+                  </p>
+                  <p className="mb-2">
+                    <b> Languages:</b> {Object.values(country.languages).join(", ")}
+                  </p>
+                </article>
+
+              </div>
+
+              <br />
+
+              {/* <h5>Border Countries:</h5> */}
+              <div className="md:lg:flex items-center lg:ml-16">
+
+                <CountryBorders borders={country.borders} />
+
+              </div>
             </div>
-          </div>
+
+          </section>
 
         </div>
       ) : (
