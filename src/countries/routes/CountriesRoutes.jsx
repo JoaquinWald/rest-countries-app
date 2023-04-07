@@ -24,7 +24,7 @@ export const CountriesRoutes = () => {
           <Route path="europe" element={<EuropePage />} />
           <Route path="oceania" element={<OceaniaPage />} />
 
-          <Route path="/*" element={<Navigate to={"/all"} />} />
+          <Route path="/" element={<Navigate to={"/all"} />} />
         </Routes>
 
       </div>
