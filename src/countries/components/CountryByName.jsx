@@ -16,7 +16,7 @@ const CountryByName = ({ cca3 }) => {
 
 
   return (
-    <div className="grid grid-cols-1 p-4 h-screen bg-zinc-100 dark:bg-slate-800">
+    <div className="grid grid-cols-1 p-4 bg-zinc-100 dark:bg-slate-800">
       {country ? (
         <div className="lg:grid lg:grid-cols-1 lg:mb-52 place-content-start">
 
