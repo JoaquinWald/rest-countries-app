@@ -1,6 +1,6 @@
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { useForm } from "../../hooks/useForm";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import queryString from 'query-string';
 import { useFetch } from "../../hooks/useFetch";
 import { CountriesCard } from "./CountriesCard";

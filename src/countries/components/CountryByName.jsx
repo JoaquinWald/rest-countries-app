@@ -18,10 +18,10 @@ const CountryByName = ({ cca3 }) => {
   return (
     <div className="grid grid-cols-1 p-4 bg-zinc-100 dark:bg-slate-800">
       {country ? (
-        <div className="lg:grid lg:grid-cols-1 lg:mb-52 place-content-start">
+        <div className="lg:grid lg:grid-cols-1 place-content-start md:h-screen">
 
           <button
-            className="flex items-center px-4 py-1 mb-5 rounded-sm shadow-md border-slate-200 bg-slate-100 lg:w-28 lg:h-10 dark:border-slate-800 dark:bg-slate-700 dark:text-slate-200"
+            className="flex items-center px-4 py-1 mb-5 rounded-md shadow-md bg-slate-100 lg:w-28 lg:h-10 dark:bg-slate-700 dark:text-slate-200 border-solid border-2 border-gray-300 hover:shadow-lg dark:border-none"
             onClick={onNavigateBack}
           >
             <figure className="m-0 pr-1">
