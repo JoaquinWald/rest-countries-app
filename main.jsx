@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,11 +8,13 @@ import { RestCountriesApp } from './src/RestCountriesApp';
 
 ReactDOM.createRoot(document.getElementById('app')).render(
   // <React.StrictMode>
-  <BrowserRouter basename='/rest-countries-app/'>
+  // <BrowserRouter basename='/rest-countries-app/'>
 
+  <HashRouter>
     <RestCountriesApp />
+  </HashRouter>
 
-  </BrowserRouter>
+  // </BrowserRouter>
   // </React.StrictMode>
 );
 
